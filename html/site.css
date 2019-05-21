@@ -1,0 +1,78 @@
+body {
+    background: rgb(133, 202, 227);
+}
+
+.button {
+    width: 8rem;
+    text-align: center;
+    cursor: pointer;
+    background: green;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font: 800 2em/1  "helvetica";
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.button:hover {
+    background: yellow;
+    color: black;
+}
+
+.page {
+    width: 100%;
+    /* display: none; */
+    animation-play-state: inherit;
+}
+
+.two-lines {
+    width: 100%;
+    display: none;
+    animation-play-state: inherit;
+}
+
+.page.visible {
+    display: block;
+}
+
+#lyrics-wrapper {
+    position: relative;
+}
+
+#lyrics {
+    width: 100%;
+	font: 800 4em/1.3  "Calibri";
+    animation-play-state: paused;
+    text-align: center;
+}
+
+#lyrics .lyric {
+	background-image: linear-gradient(to right, #f4f4f4 50%, rgb(180, 104, 255) 50%);
+	background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+	background-size: 200% 100%;
+    background-position: 0 0;
+	animation-name: karaoke;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    -webkit-text-fill-color: transparent;
+    animation-play-state: inherit;
+    position: relative;
+}
+
+#lyrics .lyric:before {
+    content: attr(title);
+    position: absolute;
+    -webkit-text-stroke: 0.2em #1a1a1a; /* Chris Coyier's favorite color! */
+    left: 0;
+    top: -0.15em;
+    z-index: -1;
+}
+
+@keyframes karaoke {
+	100% {
+		background-position: -100% 0;
+	}
+}
